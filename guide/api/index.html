@@ -1,0 +1,2457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lityuan0226.github.io/my-mkdocs/guide/api/">
+      
+      
+        <link rel="prev" href="../metrics/">
+      
+      
+        <link rel="next" href="../../spec-datasheet/g5/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>RESTful API Documentation - Vion</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vion" class="md-header__button md-logo" aria-label="Vion" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vion
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RESTful API Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="{prefers-color-scheme}" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="{prefers-color-scheme: light}" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="{prefers-coloe-scheme: dark}" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../bi-platform/" class="md-tabs__link">
+          
+  
+  
+  Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec-datasheet/g5/" class="md-tabs__link">
+          
+  
+  
+  Spec DataSheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../quick-guide/g5/" class="md-tabs__link">
+          
+  
+  
+  QuickGuide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vion" class="md-nav__button md-logo" aria-label="Vion" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vion
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bi-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BI Platfrom
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customer Operation SOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    On-Premises Server Hosting Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Business Metrics Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Service Desk Operation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Guideline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Senor Device Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cbox.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cbox Device Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    RESTful API Documentation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    RESTful API Documentation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-store-info-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Store Info List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-store-entrance-info-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Store-Entrance Info List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-store-counting-data-hourly" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Store Counting Data Hourly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-store-hourly-customer-segment-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Store Hourly Customer Segment Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-store-dwelltime" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Store DwellTime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-store-dwelltime-every-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Store DwellTime (Every Customer)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-store-entrance-counting-data-hourly" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Store-Entrance Counting Data Hourly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-store-entrance-hourly-customer-segment-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Store-Entrance Hourly Customer Segment Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-capture-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Capture record
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-in-store-area-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. In-store area data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-store-daily-customer-segment-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Store Daily Customer Segment Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13entrance-daily-demographics-data-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.Entrance Daily Demographics Data (V2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14entrance-hourly-demographics-data-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.Entrance Hourly Demographics Data (V2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      15.Heatmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16entrance-visitor-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.Entrance Visitor Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17store-zone-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.Store zone data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18zone-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.Zone info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19store-zone-hourly-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.Store zone hourly data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20device-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.Device Info
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VionDeviceTool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Spec DataSheet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Spec DataSheet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec-datasheet/g5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec-datasheet/cbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec-datasheet/bi-v6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BI v6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    QuickGuide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            QuickGuide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-guide/g5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-guide/cbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Login
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-store-info-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Store Info List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-store-entrance-info-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Store-Entrance Info List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-store-counting-data-hourly" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Store Counting Data Hourly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-store-hourly-customer-segment-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Store Hourly Customer Segment Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-store-dwelltime" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Store DwellTime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-store-dwelltime-every-customer" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Store DwellTime (Every Customer)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-store-entrance-counting-data-hourly" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Store-Entrance Counting Data Hourly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-store-entrance-hourly-customer-segment-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Store-Entrance Hourly Customer Segment Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-capture-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Capture record
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-in-store-area-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. In-store area data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-store-daily-customer-segment-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Store Daily Customer Segment Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13entrance-daily-demographics-data-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.Entrance Daily Demographics Data (V2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14entrance-hourly-demographics-data-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.Entrance Hourly Demographics Data (V2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15heatmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      15.Heatmap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16entrance-visitor-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.Entrance Visitor Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17store-zone-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.Store zone data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18zone-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.Zone info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19store-zone-hourly-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.Store zone hourly data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20device-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.Device Info
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api"><abbr title="Application Programming Interface">API</abbr><a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+<p>The <abbr title="Application Programming Interface">API</abbr> of the passenger flow platform is a development system for VIONVISON Technology Co., Ltd. to obtain the original data of the equipment for users. After users choose to access the cloud platform,you can get data to other platform by the <abbr title="Application Programming Interface">API</abbr>.</p>
+<p>The <abbr title="Application Programming Interface">API</abbr> address is : <a href="http://api.store.keliuyun.com"><code>http://api.store.keliuyun.com</code></a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<h2 id="1-login">1. Login<a class="headerlink" href="#1-login" title="Permanent link">&para;</a></h2>
+<p>You can use the user name and password to obtain the token through this interface. Other interfaces will use the token obtained here</p>
+<div class="admonition note">
+<p class="admonition-title">Notice</p>
+<p>The appkey is your company name。Example：vionvision</p>
+</div>
+<p>| <code>Verb</code>: POST<br />
+ | <code>Path</code>: api/v1/user/login<br />
+ | <code>Header</code>: (Content-Type: application/json)  </p>
+<p>| Request Body</p>
+<pre><code>```json
+{
+    appkey:"xxxxx",                  // appkey,your company name
+    username:"your username",           //username
+    password:"your password"        //password
+}
+```
+</code></pre>
+<p>| Response Body: </p>
+<pre><code>```json
+{
+    atoken:"2cb4ff2f-191a-4b7f-8ef4-7e59bb3d87f4",     //token info
+    msg_code:200,                                      //request status
+    msg_info:"Login Success"
+}
+```
+</code></pre>
+<h2 id="2-store-info-list">2. Store Info List<a class="headerlink" href="#2-store-info-list" title="Permanent link">&para;</a></h2>
+<p>You can get all stores through this interface.</p>
+<p>| <code>Verb</code>: GET<br />
+ | <code>Path</code>: api/v1/base/plazaInfo
+ | <code>Header</code>: (authorization, {$atoken})</p>
+<p>| Request Params:
+   - None</p>
+<p>| Response Body:</p>
+<pre><code>```json
+{
+    msg_code: 200,
+    msg_info: "this is info",
+    data: [{
+        plaza_unid: "1231233",      //unid of store，Global unique identifier of store information
+        plaza_externalid: "9876632",    //The external code of the store is generally used to keep consistent with other system codes when interfacing with other systems.
+        plaza_name: "store name",       //store name
+        group_id:"group id",            //id of the group to which the store belongs
+        group_name:"group name",        //name of the group to which the store belongs
+        time_zone: "+01:00",            // time zone
+        "business_start_time": "00:00:00",  // business time
+        "business_end_time": "00:00:00"
+    },
+    {
+        plaza_unid: "1231233",
+        plaza_externalid: "9876632",
+        plaza_name: "store name",
+        group_id:"group id",
+        group_name:"group name",
+        time_zone: "+01:00",
+        "business_start_time": "00:00:00",
+        "business_end_time": "00:00:00"
+    },  
+    {
+        plaza_unid:"1231233",
+        plaza_externalid: "9876632",
+        plaza_name: "store name",
+        group_id:"group id",
+        group_name:"group name",
+        time_zone: "+01:00",
+        "business_start_time": "00:00:00",
+        "business_end_time": "00:00:00"
+    }]
+}
+```
+</code></pre>
+<h2 id="3-store-entrance-info-list">3. Store-Entrance Info List<a class="headerlink" href="#3-store-entrance-info-list" title="Permanent link">&para;</a></h2>
+<p>You can get all stores-entrance through this interface.</p>
+<p>| <code>Verb</code>: GET<br />
+| <code>Path</code>: api/v1/base/gateInfo
+| <code>Header</code>: (authorization, {$atoken})
+| Request Params:</p>
+<ul>
+<li>plaza_unid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6</li>
+</ul>
+<p>| Response Body:</p>
+<pre><code>{
+    msg_code: 200,
+    msg_info: &quot;success&quot;,
+    data: [{
+        plaza_unid: &quot;1231233&quot;,      //unid of store，Global unique identifier of store information
+        gate_unid:&quot;456456&quot;,     // unid of store-entrance. Global unique identifier of store-entrance
+        is_mall_gate: 1,    //The store-entrance type, 1-Store Main Entrance
+        gate_name: &quot;store-entrance name&quot;,       //store-entrance name
+        gate_status:1,          // The store-entrance status, 1-Open
+    }
+}
+</code></pre>
+<h2 id="4-store-counting-data-hourly">4. Store Counting Data Hourly<a class="headerlink" href="#4-store-counting-data-hourly" title="Permanent link">&para;</a></h2>
+<p>You can get all the  counting data from this interface.
+Now only hourly data is ready.
+Notice: The params startTime and endTime must be in one day,if you want more data in serval days,you should call this interface more times.</p>
+<p>| <code>Verb</code>: GET
+ | <code>Path</code>: api/v1/face/storeCountingDataHourly
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:</p>
+<pre><code>- plaza_unid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+- startTime: start time of the data you need 。Example：：&quot;2019-01-01 10:00:00&quot;
+- endTime:  end time of the data you need 。Example：&quot;2019-01-01 22:00:00&quot;
+</code></pre>
+<p>| Response Body:</p>
+<pre><code class="language-json">    {
+        msg_code: 200,
+        msg_info: &quot;Success&quot;,
+        data: [{
+            plaza_unid: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;,  // unid of store
+            countdate: &quot;2018-01-01&quot;,                             // countdate
+            counttime: &quot;2018-01-01 10:00:00&quot;,                    // counttime
+            innum: 45,                                           // Total Traffic IN
+            outnum: 48,                                          // Total Traffic OUT
+            customer: 31,                                        // Total Customer IN
+            customer_repeat: 10,                                 // Total Customer Repeats IN
+            customer_out: 34,                                    // Total Customer OUT
+            customer_out_repeat: 11,                             // Total Customer Repeats OUT
+            staff: 4,                                            // Total Staff IN
+            staff_out: 3,                                         // Total Staff OUT
+            adult: 4,
+            child: 3,
+            male: 3,
+            female: 4,
+            group: 3,
+            one_visitor_group: 0,
+            two_visitor_group: 0,
+            more_than_two_visitor_group: 0
+        }]
+    }
+</code></pre>
+<h2 id="5-store-hourly-customer-segment-data">5. Store Hourly Customer Segment Data<a class="headerlink" href="#5-store-hourly-customer-segment-data" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Two methods are available for obtaining store hourly customer segment data based on time parameters:
+1.Retrieve data within a specific time frame using startTime and endTime.
+2.Obtain data updated after a certain point in time using modifyTime. This data includes updates made within the last three days.</p>
+</blockquote>
+<p>| <code>Verb</code>: GET<br />
+ | <code>Path</code>: api/v2/reid/plazaHour
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:<br />
+    - plazaUnid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+    - startTime: start time of the data you need.Example：："2019-01-01 10:00:00",         <br />
+    - endTime:  end time of the data you need.Example："2019-01-01 22:00:00"    <br />
+    - modifyTime: the timestamp of the most recent data modification.Example："2019-01-01 23:00:00" 
+  -
+ | Response Body:</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+    {
+        &quot;plazaUnid&quot;: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;,       //Store unid
+        &quot;plazaExternalid&quot;: &quot;&quot;,                                     //Store external id
+        &quot;plazaName&quot;: &quot;name&quot;,                                    //Store name
+        &quot;countdate&quot;: &quot;2018-01-01&quot;,                                 //date
+        &quot;counttimeLocal&quot;: &quot;2018-01-01 10:00:00&quot;,                   //datetime
+        &quot;customerNum&quot;: 100,                                        //Total Customer IN
+        &quot;gender&quot;: {
+             &quot;maleCount&quot;: 100,                                     //Total Male Customer IN
+             &quot;femaleCount&quot;: 100                                    //Total Female Customer IN
+        },
+        &quot;age&quot;: {
+            &quot;juvenile&quot;: [100, 200],                                // age &lt; 18 [male,female]
+            &quot;youth&quot;: [100, 200],                                   // 18 &lt;= age &lt; 45 [male,female]
+            &quot;middleAged&quot;: [100, 200],                              // 45 &lt;= age &lt; 60 [male,female]
+            &quot;elderly&quot;: [100, 200]                                  // age &gt;= 60 [male,female]
+        },
+        &quot;modifyTime&quot;: &quot;2022-01-01 14:00:10&quot;
+    }
+    ... ...
+    ]
+}
+</code></pre>
+<h2 id="6-store-dwelltime">6. Store DwellTime<a class="headerlink" href="#6-store-dwelltime" title="Permanent link">&para;</a></h2>
+<p>You can get Store DwellTime through this interface.</p>
+<blockquote>
+<p>The DwellTime will generate next day(T+1).
+For exmaple: <code>Today's</code> DwellTime data will generate <code>TOMORROW</code>.</p>
+</blockquote>
+<p>| <code>Verb</code>: GET<br />
+ | <code>Path</code>: api/v2/reid/mallDwellTime
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:<br />
+    - plazaUnid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+    - countdate: date ，Example：2018-01-01
+ | Response Body:</p>
+<pre><code>{
+    &quot;code&quot;: 200,
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;success&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;plazaUnid&quot;: &quot;123123&quot;,                         // Store unid
+            &quot;plazaName&quot;: &quot;store name&quot;,                     // Store name
+            &quot;countdate&quot;: &quot;2018-01-01&quot;,                     // date
+            &quot;totalDewellTime&quot;: 295449,                     // The Store totaldwellTime(second)
+            &quot;dwellTime&quot;: [
+                {
+                    &quot;dwellNum&quot;: 46,                       // The Customer who's dewellTime in dwellTimeGroup
+                    &quot;dwellTimeGroup&quot;: &quot;0-15&quot;              // The dweelTimeGroup 0-15(minute)
+                },
+                {
+                    &quot;dwellNum&quot;: 17,
+                    &quot;dwellTimeGroup&quot;: &quot;15-30&quot;
+                },
+                {
+                    &quot;dwellNum&quot;: 9,
+                    &quot;dwellTimeGroup&quot;: &quot;31-45&quot;
+                },
+                {
+                    &quot;dwellNum&quot;: 10,
+                    &quot;dwellTimeGroup&quot;: &quot;46-60&quot;
+                },
+                {
+                    &quot;dwellNum&quot;: 9,
+                    &quot;dwellTimeGroup&quot;: &quot;61-90&quot;
+                },
+                {
+                    &quot;dwellNum&quot;: 16,
+                    &quot;dwellTimeGroup&quot;: &quot;91+&quot;
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<h2 id="7-store-dwelltime-every-customer">7. Store DwellTime (Every Customer)<a class="headerlink" href="#7-store-dwelltime-every-customer" title="Permanent link">&para;</a></h2>
+<p>You can get Store DwellTime of <code>every customer</code> that recognised through this interface.</p>
+<p>| <code>Verb</code>: GET<br />
+ | <code>Path</code>: api/v1/residence/plazaResidence
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:<br />
+    - plaza_unid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+    - countdate: date ，Example：2018-01-01
+ | Response Body:</p>
+<pre><code>{
+        msg_code: 200,
+        msg_info: &quot;success&quot;,
+        data: [
+        {
+            plaza_unid: &quot;d03ab9dc-9e78-11eb-a328-0017fa03adf3&quot;,  // unid of store，Global unique identifier of store information
+            plaza_externalid:&quot;1001001001&quot;,                      //The external code of the store is generally used to keep consistent with other system codes when interfacing with other systems.
+            person_unid：&quot;98a0da78-9fcf-4126-b10f-93ed4c0d2cec&quot;, //unid of person(customer&amp;staff)
+            plaza_name: &quot;store name&quot;,     //name of store
+            intime: &quot;2021-05-31 00:00:00&quot;,     //when entry store
+            outtime: &quot;2021-05-31 00:00:10&quot;,     //when exit store
+            residence_time: &quot;0&quot;,  //dwell time
+            countdate: &quot;2021-05-31&quot;    //date
+        },
+        {
+            plaza_unid: &quot;d03ab9dc-9e78-11eb-a328-0017fa03adf3&quot;,  // unid of store，Global unique identifier of store information
+            plaza_externalid:&quot;1001001001&quot;,                      //The external code of the store is generally used to keep consistent with other system codes when interfacing with other systems.
+            person_unid：&quot;98a0da78-9fcf-4126-b10f-93ed4c0d2cec&quot;, //unid of person(customer&amp;staff)
+            plaza_name: &quot;store name&quot;,     //name of store
+            intime: &quot;2021-05-31 00:00:00&quot;,     //when entry store
+            outtime: &quot;2021-05-31 00:00:10&quot;,     //when exit store
+            residence_time: &quot;0&quot;,  //dwell time
+            countdate: &quot;2021-05-31&quot;    //date
+        }
+    ]
+    }
+</code></pre>
+<h2 id="8-store-entrance-counting-data-hourly">8. Store-Entrance Counting Data Hourly<a class="headerlink" href="#8-store-entrance-counting-data-hourly" title="Permanent link">&para;</a></h2>
+<p>You can get all the  Store-Entrance counting data from this interface.</p>
+<blockquote>
+<p>The params startTime and endTime must be in one day
+And if you want more data in serval days,you should call this interface more times.</p>
+</blockquote>
+<p>| <code>Verb</code>: GET
+| <code>Path</code>: api/v1/passenger/gateHour
+| <code>Header</code>: (authorization, {$atoken})
+| Request Params: </p>
+<pre><code>- plaza_unid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+- gate_unid: unid of entrance. Example: aaaaaa-bbbb-cccc-dddd-assassaas
+- startTime: start time of the data you need 。Example：："2019-01-01 10:00:00"
+- endTime:  end time of the data you need 。Example："2019-01-01 22:00:00"
+</code></pre>
+<p>| Response Body:</p>
+<pre><code>{
+    msg_code: 200,
+    msg_info: &quot;success&quot;,
+    data: [{
+        plaza_unid: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;,  // unid of store
+        gate_unid: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,   // unid of store-entrance
+        countdate: &quot;2018-01-01&quot;,                             // date
+        counttime: &quot;2018-01-01 10:00:00&quot;,                    // datetime
+        innum: 19,                                           // Total Traffic IN
+        outnum: 20,                                          // Total Traffic OUT
+        outside_innum: 50,                                   // Traffic outside
+        outside_outnum: 40,                                  // Traffic outside
+        customer: 16,                                        // Total Customer IN
+        customer_repeat: 1,                                  // Total Customer Repeats IN
+        customer_out: 18                                     // Total Customer OUT
+        customer_out_repeat: 1,                              // Total Customer Repeats OUT
+        staff: 2,                                            // Total Staff IN
+        staff_out: 1                                         // Total Staff OUT
+    },
+    {
+        plaza_unid: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;,
+        gate_unid: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,
+        countdate: &quot;2018-01-01&quot;,
+        counttime: &quot;2018-01-01 10:00:00&quot;,
+        innum: 26,
+        outnum: 28,
+        outside_innum: 50,
+        outside_outnum: 40,
+        customer: 20,
+        customer_repeat: 4,
+        customer_out: 19,
+        customer_out_repeat: 7,
+        staff: 2,
+        staff_out: 2
+    }]
+}
+</code></pre>
+<h2 id="9-store-entrance-hourly-customer-segment-data">9. Store-Entrance Hourly Customer Segment Data<a class="headerlink" href="#9-store-entrance-hourly-customer-segment-data" title="Permanent link">&para;</a></h2>
+<p>You can get all the Store-Entrance Hourly Customer data from this interface.</p>
+<blockquote>
+<p>The params startTime and endTime must be in one day
+And if you want more data in serval days,you should call this interface more times.</p>
+</blockquote>
+<p>| <code>Verb</code>: GET
+| <code>Path</code>: api/v1/face/gateHour
+| <code>Header</code>: (authorization, {$atoken})
+| Request Params: </p>
+<pre><code>- plaza_unid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+- gate_unid: unid of entrance. Example: aaaaaa-bbbb-cccc-dddd-assassaas
+- startTime: start time of the data you need 。Example：："2019-01-01 10:00:00"
+- endTime:  end time of the data you need 。Example："2019-01-01 22:00:00"
+</code></pre>
+<p>| Response Body:</p>
+<pre><code>{
+    msg_code: 200,
+    msg_info: &quot;success&quot;,
+    data: [
+    {
+        plaza_unid: &quot;123123&quot;,   // unid of store
+        gate_unid:&quot;456456&quot;,       // unid of store-entrance
+        countdate: &quot;2019-01-01&quot;,     // date
+        counttime:&quot;2019-01-01 10:00:00&quot;, // datetime
+        totalnum: 11,                            // total(customer &amp; staff) number with repeat
+        totalcount: 9,                           // total(customer &amp; staff) number without repeat
+        customerMantime: 9,                      // customer number with repeat
+        customer: 8,                             // customer number without repeat
+        maleCount: 1,                            // male customer without repeat
+        femalCount: 7,                           // female customer without repeat
+        maleMantime: 1,                          // male customer with repeat
+        femaleMantime: 8,                        // female customer with repeat
+        staffMantime: 2,                         // staff with repeat
+        staffCount: 1,                           // staff without repeat
+        male_stage:&quot;0,0,0,0,0,0,0,0,12,1,2,3,2,4,0,0,1，·······&quot;,  // male age detail, first is age 0, last is age 100
+        female_stage:&quot;0,0,0,0,0,0,0,0,12,1,2,3,2,4,0,0,1，·······&quot;, // female age detail, first is age0, last is age 100
+    }
+}
+</code></pre>
+<h2 id="10-capture-record">10. Capture record<a class="headerlink" href="#10-capture-record" title="Permanent link">&para;</a></h2>
+<p>| <code>Verb</code>: GET<br />
+ | <code>Path</code>: api/v2/captureRecord
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:<br />
+    - plazaUnid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+    - countdate: date ，Example：2018-01-01
+  -
+ | Response Body:</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+         {
+                &quot;unid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,              //unid
+                &quot;personUnid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,    //personUnid
+                &quot;gateUnid&quot;: &quot;aaaabbbb-cccc-ddd&quot;,        // unid of gate
+                &quot;plazaUnid&quot;: &quot;dddeeeee-cccc-ddd&quot;,        // unid of store
+                &quot;age&quot;: 27,                            
+                &quot;gender&quot;: 1,                            //  1：male 0：female -1：unknow
+                &quot;direction&quot;: 1,                            // 1：in -1：out
+                &quot;counttimeLocal&quot;: &quot;2022-12-31 01:00:00&quot;,        // time
+                &quot;countdate&quot;: &quot;2022-12-31&quot;        // date
+            },
+          {
+                &quot;unid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,
+                &quot;personUnid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,
+                &quot;gateUnid&quot;: &quot;aaaabbbb-cccc-ddd&quot;,
+                &quot;plazaUnid&quot;: &quot;dddeeeee-cccc-ddd&quot;,
+                &quot;age&quot;: 27,
+                &quot;gender&quot;: 1,
+                &quot;direction&quot;: 1,
+                &quot;counttimeLocal&quot;: &quot;2022-12-31 01:00:00&quot;,
+                &quot;countdate&quot;: &quot;2022-12-31&quot;
+            }
+  ]
+}
+</code></pre>
+<h2 id="11-in-store-area-data">11. In-store area data<a class="headerlink" href="#11-in-store-area-data" title="Permanent link">&para;</a></h2>
+<p>| <code>Verb</code>: GET<br />
+ | <code>Path</code>: api/v2/zoneStat
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:<br />
+    - plazaUnid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+    - countdate: date ，Example：2018-01-01
+  -
+ | Response Body:</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+          {
+                &quot;zoneUnid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,              //unid of zone
+                &quot;zoneName&quot;: &quot;zonename 2&quot;,                                //name of zone
+                &quot;personMantime&quot;: 62,                       //traffic passenger
+                &quot;personCount&quot;: 40,                        //visitors
+                &quot;stopPersonCount&quot;: 27,                            // long dwell visitors
+                &quot;totalResidenceTime&quot;: 1040,                //total dwell time (seconds)           
+                &quot;avgResidenceTime&quot;: 26                     //average dwell time (seconds)       
+          },
+          {
+                &quot;zoneUnid&quot;: &quot;12c2266f-a29b-478a-8a59-xxxxxxxxx&quot;,
+                &quot;zoneName&quot;: &quot;zonename 2&quot;,
+                &quot;personMantime&quot;: 62,
+                &quot;personCount&quot;: 40,
+                &quot;stopPersonCount&quot;: 27,
+                &quot;totalResidenceTime&quot;: 1040,
+                &quot;avgResidenceTime&quot;: 26
+         }
+  ]
+}
+</code></pre>
+<h2 id="12-store-daily-customer-segment-data">12. Store Daily Customer Segment Data<a class="headerlink" href="#12-store-daily-customer-segment-data" title="Permanent link">&para;</a></h2>
+<p>| <code>Verb</code>: GET
+ | <code>Path</code>: api/v2/passenger/plazaDay
+ | <code>Header</code>: (authorization, {$atoken})
+ | Request Params:<br />
+    - plazaUnid: unid of store。Example：8734758a-e0b0-11e8-b6e8-7cd30ac4c9a6
+    - startDate: date ，Example：2018-01-01
+    - endDate: date ，Example：2018-01-01
+ | Response Body:</p>
+<pre><code class="language-json">{
+  &quot;code&quot;: 200,
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;success&quot;: true,
+  &quot;data&quot;: [
+    {
+      &quot;plazaUnid&quot;: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;, //unid of store
+      &quot;plazaExternalid&quot;: &quot;1001001001&quot;, // external id of store
+      &quot;plazaName&quot;: &quot;testName&quot;, // name of store
+      &quot;countdate&quot;: &quot;2018-01-01&quot;, //date
+      &quot;innum&quot;: 100, //total traffic IN
+      &quot;outnum&quot;: 100, //total traffic OUT
+      &quot;outsideNum&quot;: 2000, // total traffic outside
+      &quot;customerNum&quot;: 12313, //total customer IN
+      &quot;staffCount&quot;: 1000, // total staff IN
+      &quot;deepShoppingNum&quot;: 50, // long dwell visitors
+      &quot;deepShoppingRate&quot;: 5.4, // long dwell rate
+      &quot;residenceTimeSecond&quot;: 120, // sum of residence time
+      &quot;groupName&quot;: &quot;test&quot;, // name of group
+      &quot;modifyTime&quot;: &quot;2022-01-01 14:00:10&quot;, //data update time
+    }
+    // ... ...
+  ]
+}
+</code></pre>
+<h2 id="13entrance-daily-demographics-data-v2">13.Entrance Daily Demographics Data (V2)<a class="headerlink" href="#13entrance-daily-demographics-data-v2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Can support two time parameters to obtain entrance daily data.
+1. Get data within a period of time based on startDate and endDate. Based on interface performance considerations, cross-day data query is not supported for the time being.
+2. Obtain data updated after a certain point in time based on modifyTime. The data date is within three days and has been updated.</p>
+</blockquote>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/reid/gateDay</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<blockquote>
+<p>Note:When querying data for a certain time period, you only need to pass the parameters startDate and endDate. Start time and end time must be on the same day.
+When querying data after the data update time, you only need to pass the parameter modifyTime. modifyTime only supports queries for data updated within three days. Data three days ago needs to be obtained using startDate and endDate.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+<tr>
+<td>gateUnid</td>
+<td>string</td>
+<td>NO</td>
+<td></td>
+<td>entrance unique code, if no this field will return all entrance</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>string</td>
+<td>NO</td>
+<td>2022-12-31</td>
+<td>start date</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>string</td>
+<td>NO</td>
+<td>2022-12-31</td>
+<td>end date</td>
+</tr>
+<tr>
+<td>modifyTime</td>
+<td>string</td>
+<td>NO</td>
+<td>2022-12-31 10:00:00</td>
+<td>last modify time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+    {
+        &quot;plazaUnid&quot;: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;,      //mall unique code
+        &quot;gateUnid&quot;:&quot;5632266f-a29b-478a-8a59-2ed54e13256&quot;,         //entrance unique code
+        &quot;gateExternalid&quot;:&quot;1001001001&quot;,                           //entrance external code
+        &quot;countdate&quot;: &quot;2018-01-01&quot;,                                 //date
+        &quot;customerNum&quot;: 100,                                      //unique visitors
+        &quot;gender&quot;: {
+             &quot;maleCount&quot;: 100,                                         //male visitors
+             &quot;femalCount&quot;: 100                                         //female visitors
+        },
+        &quot;age&quot;: {
+            &quot;juvenile&quot;: [100, 200],                                    // juvenile(to 18) [male,female]
+            &quot;youth&quot;: [100, 200],                                       // youth(19-45) [male,female]
+            &quot;middleAged&quot;: [100, 200],                                  // middleAged(46-60) [male,female]
+            &quot;elderly&quot;: [100, 200]                                      // elderly(60 above) [male,female]
+        },
+        &quot;modifyTime&quot;: &quot;2022-01-01 14:00:10&quot;                           //last modify time
+    }
+    ... ...
+    ]
+}
+</code></pre>
+<h2 id="14entrance-hourly-demographics-data-v2">14.Entrance Hourly Demographics Data (V2)<a class="headerlink" href="#14entrance-hourly-demographics-data-v2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Can support two time parameters to obtain entrance hourly data.
+1. Get data within a period of time based on startTime and endTime. Based on interface performance considerations, cross-day data query is not supported for the time being.
+2. Obtain data updated after a certain point in time based on modifyTime. The data date is within three days and has been updated.</p>
+</blockquote>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/reid/gateHour</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<blockquote>
+<p>Note:When querying data for a certain time period, you only need to pass the parameters startTime and endTime. Start time and end time must be on the same day.
+When querying data after the data update time, you only need to pass the parameter modifyTime. modifyTime only supports queries for data updated within three days. Data from three days ago needs to be obtained using startTime and endTime.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+<tr>
+<td>gateUnid</td>
+<td>string</td>
+<td>NO</td>
+<td></td>
+<td>entrance unique code, if no this field will return all entrance</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>string</td>
+<td>NO</td>
+<td>2022-12-31 10:00:00</td>
+<td>start time</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>string</td>
+<td>NO</td>
+<td>2022-12-31 22:00:00</td>
+<td>end time</td>
+</tr>
+<tr>
+<td>modifyTime</td>
+<td>string</td>
+<td>NO</td>
+<td>2022-12-31 10:00:00</td>
+<td>last modify time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+    {
+        &quot;plazaUnid&quot;: &quot;83c2266f-a29b-478a-8a59-2ed54e144641&quot;,      //mall unique code
+        &quot;gateUnid&quot;:&quot;5632266f-a29b-478a-8a59-2ed54e13256&quot;,         //entrance unique code
+        &quot;gateExternalid&quot;:&quot;1001001001&quot;,                           //entrance external code
+        &quot;countdate&quot;: &quot;2018-01-01&quot;,                                 //date
+        &quot;counttimeLocal&quot;: &quot;2018-01-01 18:00:00&quot;,                   //local time
+        &quot;customerNum&quot;: 100,                                      //unique visitors
+        &quot;gender&quot;: {
+             &quot;maleCount&quot;: 100,                                         //male visitors
+             &quot;femalCount&quot;: 100                                         //female visitors
+        },
+        &quot;age&quot;: {
+            &quot;juvenile&quot;: [100, 200],                                    // juvenile(to 18) [male,female]
+            &quot;youth&quot;: [100, 200],                                       // youth(19-45) [male,female]
+            &quot;middleAged&quot;: [100, 200],                                  // middleAged(46-60) [male,female]
+            &quot;elderly&quot;: [100, 200]                                      // elderly(60 above) [male,female]
+        },
+        &quot;modifyTime&quot;: &quot;2022-01-01 14:00:10&quot;                           //last modify time
+    }
+    ... ...
+    ]
+}
+</code></pre>
+<h2 id="15heatmap">15.Heatmap<a class="headerlink" href="#15heatmap" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Store Heatmap Data</p>
+</blockquote>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/heatMap</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>Yes</td>
+<td></td>
+<td>Unique store code</td>
+</tr>
+<tr>
+<td>countdate</td>
+<td>string</td>
+<td>Yes</td>
+<td>yyyy-MM-dd</td>
+<td>Statistical date</td>
+</tr>
+<tr>
+<td>personType</td>
+<td>array</td>
+<td>No</td>
+<td>0,1,-99</td>
+<td>type：visitor: 0; staff:1; unknown: -99</td>
+</tr>
+<tr>
+<td>genders</td>
+<td>array</td>
+<td>No</td>
+<td>1,0</td>
+<td>gender：male 1 female 0</td>
+</tr>
+<tr>
+<td>ages</td>
+<td>array</td>
+<td>No</td>
+<td>0-18,19-35,36-55,56-100</td>
+<td>Age groups：0-18,19-35,36-55,56-100</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+    {
+      &quot;imgUrl&quot;: &quot;http://xxxx.com/a.img&quot;, //layout
+      &quot;heat&quot;: [
+          {
+                &quot;residenceTimeTotal&quot;: 48.2,        // total dwell time，unit:seconds
+                &quot;rx&quot;: 50.4,        // x,y coordinate
+                &quot;ry&quot;: 41.4
+            },
+          {
+                &quot;residenceTimeTotal&quot;: 15.36,
+                &quot;rx&quot;: 50.4,
+                &quot;ry&quot;: 41.2
+            }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h2 id="16entrance-visitor-flow">16.Entrance Visitor Flow<a class="headerlink" href="#16entrance-visitor-flow" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Visitor flow between entrances</p>
+</blockquote>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/gateFlowDirection</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+<tr>
+<td>countdate</td>
+<td>string</td>
+<td>YES</td>
+<td>2022-12-31</td>
+<td>Date</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;success&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;source&quot;: &quot;a&quot;,        // entrance name
+            &quot;target&quot;: &quot;b&quot;,        // entrance name
+            &quot;value&quot;: 1            // counts
+        },
+        {
+            &quot;source&quot;: &quot;a&quot;,
+            &quot;target&quot;: &quot;c&quot;,
+            &quot;value&quot;: 2
+        },
+        {
+            &quot;source&quot;: &quot;b&quot;,
+            &quot;target&quot;: &quot;c&quot;,
+            &quot;value&quot;: 4
+        },
+        {
+            &quot;source&quot;: &quot;c&quot;,
+            &quot;target&quot;: &quot;a&quot;,
+            &quot;value&quot;: 3
+        }
+    ]
+}
+
+</code></pre>
+<h2 id="17store-zone-data">17.Store zone data<a class="headerlink" href="#17store-zone-data" title="Permanent link">&para;</a></h2>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/zoneStat</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+<tr>
+<td>countdate</td>
+<td>string</td>
+<td>YES</td>
+<td>2022-12-31</td>
+<td>Date</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+    {
+        &quot;zoneUnid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,              //Unique zone code
+        &quot;zoneName&quot;: &quot;test1&quot;,                                //zone name
+        &quot;personMantime&quot;: 62,                            // counts
+        &quot;customerMantime&quot;: 50,                            // traffic counts
+        &quot;personCount&quot;: 40,                            // visitor counts
+        &quot;staffMantime&quot;: 33,                            // staff counts
+        &quot;stopPersonCount&quot;: 27,                            // longdwell visitor counts
+        &quot;totalResidenceTime&quot;: 1040,                            // total dwell time
+        &quot;avgResidenceTime&quot;: 26,                            // average dwell time
+        &quot;age&quot;: {
+          &quot;juvenile&quot;: [1, 0],                    // juvenile,male/female
+          &quot;youth&quot;: [9, 6],                    // youth, male/female
+          &quot;middleAged&quot;: [0, 1],                // middleAged,male/female
+          &quot;elderly&quot;: [0, 1]                    // elderly,male/female
+         },
+         &quot;gender&quot;: {
+           &quot;maleCount&quot;: 10,                    //male counts
+           &quot;femaleCount&quot;: 8                    //female counts
+        }
+    },
+    {
+        &quot;zoneUnid&quot;: &quot;12c2266f-a29b-478a-8a59-xxxxxxxxx&quot;,
+        &quot;zoneName&quot;: &quot;testing2&quot;,
+        &quot;personMantime&quot;: 62,
+        &quot;personCount&quot;: 40,
+        &quot;stopPersonCount&quot;: 27,
+        &quot;totalResidenceTime&quot;: 1040,
+        &quot;avgResidenceTime&quot;: 26,
+        &quot;age&quot;: {
+          &quot;juvenile&quot;: [1, 0],
+          &quot;youth&quot;: [9, 6],
+          &quot;middleAged&quot;: [0, 1],
+          &quot;elderly&quot;: [0, 1]
+        },
+        &quot;gender&quot;: {
+          &quot;maleCount&quot;: 10,
+          &quot;femaleCount&quot;: 8
+       }
+    }
+    ]
+}
+</code></pre>
+<h2 id="18zone-info">18.Zone info<a class="headerlink" href="#18zone-info" title="Permanent link">&para;</a></h2>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/base/zoneInfo</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+        {
+            &quot;plazaUnid&quot;: &quot;d7c14e06-fc14-11eb-84f5-00e0533102b4&quot;, //mall unique code
+            &quot;zoneUnid&quot;: &quot;72b3e6ce-04c8-11ec-86bf-00e0533102b4&quot;,  //Unique zone code
+            &quot;zoneName&quot;: &quot;test&quot;,                             //zone name
+            &quot;zoneExternalid&quot;: &quot;&quot;,                                //zone external code
+            &quot;zoneStatus&quot;: 1                                      //zone status：1-activate，2-deactivate
+            &quot;channel&quot;: [
+                {
+                    &quot;rareaInfo&quot;: &quot;coordinate json&quot;
+                }
+            ]
+        },
+        ...
+    ]
+}
+</code></pre>
+<h2 id="19store-zone-hourly-data">19.Store zone hourly data<a class="headerlink" href="#19store-zone-hourly-data" title="Permanent link">&para;</a></h2>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v2/zoneHourStat</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+<tr>
+<td>countdate</td>
+<td>string</td>
+<td>YES</td>
+<td>2022-12-31</td>
+<td>Date</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;success&quot;: true,
+    &quot;data&quot;: [
+    {
+        &quot;zoneUnid&quot;: &quot;12c2266f-a29b-478a-8a59-2ed54e176533&quot;,              //Unique zone code
+        &quot;zoneName&quot;: &quot;test1&quot;,                                //zone name
+        &quot;counttimeLocal&quot;: &quot;2025-01-23 22:00:00&quot;,          // datetime
+        &quot;personMantime&quot;: 62,                            // counts
+        &quot;personMantimeOut&quot;: 62,                            // counts out
+        &quot;customerMantime&quot;: 50,                            // traffic counts
+        &quot;customerMantimeOut&quot;: 50,                            // traffic counts out
+        &quot;personCount&quot;: 40,                            // visitor counts
+        &quot;personCountOut&quot;: 40,                            // visitor counts out
+        &quot;staffMantime&quot;: 33,                            // staff counts
+        &quot;staffMantimeOut&quot;: 33,                            // staff counts out
+        &quot;age&quot;: {
+          &quot;juvenile&quot;: [1, 0],                    // juvenile,male/female
+          &quot;youth&quot;: [9, 6],                    // youth, male/female
+          &quot;middleAged&quot;: [0, 1],                // middleAged,male/female
+          &quot;elderly&quot;: [0, 1]                    // elderly,male/female
+         },
+         &quot;gender&quot;: {
+           &quot;maleCount&quot;: 10,                    //male counts
+           &quot;femaleCount&quot;: 8                    //female counts
+        }
+    }
+    ...
+    ]
+}
+</code></pre>
+<h2 id="20device-info">20.Device Info<a class="headerlink" href="#20device-info" title="Permanent link">&para;</a></h2>
+<p><strong>Method</strong>：<code>GET</code><br />
+<strong>Path</strong>：<code>/api/v1/base/device</code><br />
+<strong>Header</strong>：<code>{Authorization：{atoken}}</code>
+<strong>Request</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Necessary</th>
+<th>Demo</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plazaUnid</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td>mall unique code</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong>：</p>
+<pre><code class="language-json">{
+    &quot;msg_code&quot;: 200,
+    &quot;msg_info&quot;: &quot;this is info&quot;
+    &quot;data&quot;: [
+        {
+            &quot;serialnum&quot;: &quot;1FC9-FAB4-712C-7053&quot;,             //serialnum
+            &quot;name&quot;: &quot;192.168.5.134&quot;,                        //name
+            &quot;channel_count&quot;: 1,                             //Number of device channels
+            &quot;mac&quot;: &quot;00-10-ff-12-43-12&quot;,                     //mac
+            &quot;status&quot;: 1,                                    //status：0-offline，1-online，3-disable
+            &quot;local_ip&quot;: &quot;192.168.2.123&quot;,                    //ip
+            &quot;modify_time&quot;: &quot;2018-01-01 00:00:00&quot;            //modify time
+        },
+        ...
+    ]
+}
+</code></pre>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is a footnotes!&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Vionvision
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

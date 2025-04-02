@@ -1,0 +1,1662 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lityuan0226.github.io/my-mkdocs/guide/bi-platform/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../sop/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>BI Platfrom - Vion</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bi-platform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vion" class="md-header__button md-logo" aria-label="Vion" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vion
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BI Platfrom
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="{prefers-color-scheme}" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="{prefers-color-scheme: light}" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="{prefers-coloe-scheme: dark}" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../spec-datasheet/g5/" class="md-tabs__link">
+          
+  
+  
+  Spec DataSheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../quick-guide/g5/" class="md-tabs__link">
+          
+  
+  
+  QuickGuide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vion" class="md-nav__button md-logo" aria-label="Vion" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vion
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    BI Platfrom
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    BI Platfrom
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-guidebook-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Guidebook Introduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-platform-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Platform Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Platform Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-explanation-of-nouns" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Explanation of Nouns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-precautions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Precautions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-system-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. System Functionalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. System Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-data-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Data Dashboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Data Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-group-homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 Group Homepage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-store-homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 Store Homepage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-data-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Data Reports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Data Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-group-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 Group Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-store-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 Store data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-cross-store-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Cross-store Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-store-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 Store Ranking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-dwell-time-distribution-and-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5 Dwell Time Distribution and Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#327-store-index-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.7 Store Index Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#328-inout-traffic-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.8 In&amp;out Traffic Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#329-weekday-and-weekend-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.9 Weekday and Weekend Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3210-holiday-and-festive-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.10 Holiday and Festive Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3211-demographics-reid-in-agegender-segmentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.11 Demographics (ReID) in Age/Gender Segmentations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3212-store-heatmap-reid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.12 Store Heatmap (ReID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3213-zone-analysis-reid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.13 Zone Analysis (ReID)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customer Operation SOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    On-Premises Server Hosting Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Business Metrics Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Service Desk Operation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Guideline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Senor Device Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cbox.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cbox Device Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RESTful API Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VionDeviceTool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Spec DataSheet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Spec DataSheet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec-datasheet/g5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec-datasheet/cbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spec-datasheet/bi-v6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BI v6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    QuickGuide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            QuickGuide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-guide/g5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    G5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-guide/cbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-guidebook-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Guidebook Introduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-platform-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Platform Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Platform Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-explanation-of-nouns" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Explanation of Nouns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-precautions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Precautions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-system-functionalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. System Functionalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. System Functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-data-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Data Dashboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Data Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-group-homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 Group Homepage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-store-homepage" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 Store Homepage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-data-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Data Reports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Data Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-group-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 Group Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-store-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 Store data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-cross-store-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Cross-store Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-store-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 Store Ranking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-dwell-time-distribution-and-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.5 Dwell Time Distribution and Statistics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#327-store-index-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.7 Store Index Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#328-inout-traffic-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.8 In&amp;out Traffic Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#329-weekday-and-weekend-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.9 Weekday and Weekend Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3210-holiday-and-festive-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.10 Holiday and Festive Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3211-demographics-reid-in-agegender-segmentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.11 Demographics (ReID) in Age/Gender Segmentations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3212-store-heatmap-reid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.12 Store Heatmap (ReID)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3213-zone-analysis-reid" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.13 Zone Analysis (ReID)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bi-platform">BI Platform<a class="headerlink" href="#bi-platform" title="Permanent link">&para;</a></h1>
+<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
+<h3 id="11-guidebook-introduction">1.1 Guidebook Introduction<a class="headerlink" href="#11-guidebook-introduction" title="Permanent link">&para;</a></h3>
+<p>This documentation is intended to introduce the basic instructions for using the retail people counting and footfall analytics BI (Business Intelligence) platform of Beijing Vion Technology Inc, including how to login to the system correctly on the PC, how to configure organizational relationships in the early stage of the system establishment, how to create user relationships within a retail conglomerate, how to view the data reports, and the specific meanings of each report.</p>
+<h2 id="2-platform-specifications">2. Platform Specifications<a class="headerlink" href="#2-platform-specifications" title="Permanent link">&para;</a></h2>
+<h3 id="21-explanation-of-nouns">2.1 Explanation of Nouns<a class="headerlink" href="#21-explanation-of-nouns" title="Permanent link">&para;</a></h3>
+<p>Cloud Platform: refers to the people counting and footfall analytics BIplatform which is operated and maintained by our company and provides footfall analytics data query and export services.Atpresent,the cloud platform maintained by our company is divided into commercial platform and retail chain/franchise platform.
+Group: refers to the highest resource leve lof aproject,generally corresponding to a commercial group or retail chain/franchise group.Its dataauthority is generally open to the group 
+headquarters operations department.There can be multiple shops under it.
+Shop: a single retail shop.</p>
+<h3 id="22-precautions">2.2 Precautions<a class="headerlink" href="#22-precautions" title="Permanent link">&para;</a></h3>
+<p>The people counting and footfall analytics BI platform’s access requires authorization. Before using the system, first ensure that you have obtained a legitimate account and password.</p>
+<h2 id="3-system-functionalities">3. System Functionalities<a class="headerlink" href="#3-system-functionalities" title="Permanent link">&para;</a></h2>
+<h3 id="31-data-dashboard">3.1 Data Dashboard<a class="headerlink" href="#31-data-dashboard" title="Permanent link">&para;</a></h3>
+<h4 id="311-group-homepage">3.1.1 Group Homepage<a class="headerlink" href="#311-group-homepage" title="Permanent link">&para;</a></h4>
+<p>Group is the highest resource level of project data. On the Group Homepage, you can view the summary and ranking of all stores traffic in the country. This functionality is provided to the administrators of the group/conglomerate category of the multi-store project, and can be ignored by the users of a single store in general.
+- Support switching time to view the group data in different time ranges;
+- Switch the card indicators to view the trend graph of different indicators.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=f8ccdc30059a80a505038341ab7da1cc" /></p>
+<h4 id="312-store-homepage">3.1.2 Store Homepage<a class="headerlink" href="#312-store-homepage" title="Permanent link">&para;</a></h4>
+<p>The store homepage is a summary page of single store’s footfall analytics data. It mainly includes basic information such as core index data, customer flow trend, and customer/group percentage, etc..
+- Support switching time to view store data in different time ranges;
+- Switch the card indicators to view the trend graph of different indicators.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=18f15e67e12fc8869ad46c3476bd76cb" /></p>
+<h3 id="32-data-reports">3.2 Data Reports<a class="headerlink" href="#32-data-reports" title="Permanent link">&para;</a></h3>
+<h4 id="321-group-data">3.2.1 Group Data<a class="headerlink" href="#321-group-data" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Group data summarizes the footfall analytics data of the stores in each regional city under the group;</li>
+<li>It supports to view by regional grouping, and support to view the details of the footfall analytics data by store;</li>
+<li>Action Path: Login to the Platform - Report - Basic Analysis - Group Data and find the corresponding menu;</li>
+<li>Operation Methodology: select the grouping object of query and time, time granularity, click the Search button;</li>
+<li>Click the Download button, to extract the report data (excel format) or images.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=bd2c416ab7a2911532e0951394830777" /></li>
+</ul>
+<h4 id="322-store-data">3.2.2 Store data<a class="headerlink" href="#322-store-data" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Store data summarizes the passers-by traffics, entry traffics, number of unique customers, staff quantity, entry rate, long-dwelled customer traffics, long-dwelled rate, and other indicators of a single store;</li>
+<li>Action Path: Login to the Platform - Reports - Basic Analysis - Store Data and find the corresponding menu;</li>
+<li>Operation Methodology: select the store, time and time granularity of the Search and click the Search button;</li>
+<li>Support chart switching;</li>
+<li>Click the Download button, then extract the report data (excel format) or pictures.</li>
+<li>
+<p>Select different time granularity to display different statistical dimensions. Hourly level displays the number of new customers per hour; minute level displays the number of new customers per ten minutes.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=f2e346cb9e1746044cce96a094bb62a8" /></p>
+</li>
+<li>
+<p>Traffic Funnel</p>
+</li>
+<li>The Customer Traffic Funnel Analysis measures the visitor counts that have been converted into each stage of the consumption stages from passers-by to the paid conversion.</li>
+<li>Action Path: Login to the Platform - Reports - Basic Analysis - Conversion Funnel and find the corresponding menu;</li>
+<li>Operation Methodology: select the store, time and time granularity of the Search and click the Search button;</li>
+<li>
+<p>Support funnel visualization;
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=b4eeffda2cd115b9ced6b368045c6f27" /></p>
+</li>
+<li>
+<p>And able to view the detailed infos as in the KPI Comparsion, Counts Detials, Weekly Avg. Counts by Hourly/Monthly Data, Entry Rate and Data Report in the same column under Basic Analysis.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=d7e5afe9f16458487081af05c7d87dec" /></p>
+</li>
+</ul>
+<h4 id="323-cross-store-comparison">3.2.3 Cross-store Comparison<a class="headerlink" href="#323-cross-store-comparison" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Cross-store Comparison is to compare the footfall analytics data of multiple stores, supporting such indicators as passers-by traffics, entry traffics, number of unique customers, staff quantity, entry rate, long-dwelled customer traffics, long-dwelled rate, and other indicators of multiple stores;</li>
+<li>Action Path: Login to the Platform - Reports - Contrast Analysis - Comparison Analysis, and find the corresponding menu;</li>
+<li>Operation method: select the store, time and time granularity of the Search and click the Search button;</li>
+<li>Support chart switching;</li>
+<li>Click the Download button, then extract the report data excel format;</li>
+<li>Select different time granularity to display different statistical dimensions. Hourly level displays the number of new customers per hour; minute level displays the number of new customers per ten minutes.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=feebd56bb5b0a1aa277080b1ce9ef7c1" /></li>
+</ul>
+<h4 id="324-store-ranking">3.2.4 Store Ranking<a class="headerlink" href="#324-store-ranking" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Store Ranking is a ranking of the footfall anlytics data of multiple stores, supporting such indicators as passers-by traffics, entry traffics, number of unique customers, staff quantity, entry rate, long-dwelled customer traffics, long-dwelled rate, and other indicators of multiple stores;</li>
+<li>Action Path: Login to the Platform - Reports - Basic Analysis - Store Ranking and find the corresponding menu;</li>
+<li>Operation Methodology: select the Group and time of the Search and click the Search button;</li>
+<li>Click the Filtering button next to the indicators to support the ranking of stores according to different indicators in positive and reverse order;</li>
+<li>Click Details button to jump to the home page of store data.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=29cf3ba71f0163d555f9a848d25c9755" /></li>
+</ul>
+<h4 id="325-dwell-time-distribution-and-statistics">3.2.5 Dwell Time Distribution and Statistics<a class="headerlink" href="#325-dwell-time-distribution-and-statistics" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The dwell time period that traffic distribution shows the average traffics heat of each hour from Monday to Sunday;</li>
+<li>Action Path: Login to the Platform - Reports - Basic Analysis - Dwell Time, and find the corresponding menu;</li>
+<li>Operation Methodology: select the object of query, time, and click the Search button;</li>
+<li>Click the Download button, then extract the report data (excel format) or pictures;</li>
+<li>The darker the color, the higher the passenger flow during the time.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=622d99f9b0302518942e2ba2f6d98b70" /></li>
+</ul>
+<h4 id="327-store-index-analysis">3.2.7 Store Index Analysis<a class="headerlink" href="#327-store-index-analysis" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Display the percentage of customers in the store at different dwell times according to the store dwell time period settings;</li>
+<li>Indicator growth analysis page displays year-on-year and retail chain/franchise comparison data of indicators in different time ranges, and supports data export;</li>
+<li>Action Path: Login to the Platform - Reports - Contrast Analysis - Store Index Analysis, and find the corresponding menu;</li>
+<li>Operation Methodology: select the query object, indicator and time, and click the Search button;</li>
+<li>Support customized filtering according to time;</li>
+<li>Support data export through Download button.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=0704e576a3ccaffee828e0f4a04050e5" /></li>
+</ul>
+<h4 id="328-inout-traffic-comparison">3.2.8 In&amp;out Traffic Comparison<a class="headerlink" href="#328-inout-traffic-comparison" title="Permanent link">&para;</a></h4>
+<ul>
+<li>In&amp;out Traffic Comparison page displays the data comparison of incoming and outgoing customer flow of the store in each hour of the day;</li>
+<li>Action Path: Login to the Platform - Reports - Contrast Analysis - In&amp;out Traffic Comparison, and find the corresponding menu;</li>
+<li>Operation Methodology: select the store, index and time of query, and click the Search button;</li>
+<li>Support multi-selection of stores;</li>
+<li>Support chart switching;</li>
+<li>Click the Download button, then extract the report data (excel format).
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=794a9c1b762f641bb23ef5c2c0527114" /></li>
+</ul>
+<h4 id="329-weekday-and-weekend-comparison">3.2.9 Weekday and Weekend Comparison<a class="headerlink" href="#329-weekday-and-weekend-comparison" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Store traffic fluctuates regularly between weekdays and weekends. In order to understand the time pattern of potential customers and the active situation on weekends, the weekly growth of weekend traffic will be counted.</li>
+<li>Support any weekly query through Filtering and Search;</li>
+<li>Support icon and excel export through Download.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=2689d249f8640156edd31c96ca23cc98" /></li>
+</ul>
+<h4 id="3210-holiday-and-festive-analysis">3.2.10 Holiday and Festive Analysis<a class="headerlink" href="#3210-holiday-and-festive-analysis" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Holiday and Festive Analysis page shows the average customer flow and growth rate during the holiday/festival/activity period and supports data export;</li>
+<li>Activity holidays are set in the background management - holiday/festive/activity management, supporting the import of traditional holidays and customized activity cycle;</li>
+<li>Action Path: Login to the Platform - Reports - Holiday Comparison - Holiday Comparison or Festive Analysis, and find the corresponding menu;</li>
+<li>Operation Methodology: select the query store, time (year), click the Search button;</li>
+<li>Activity holidays are set in the background management - activity management;</li>
+<li>Click the Download button, then extract the report data (excel format) or pictures.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=8d206d968a4d7136993d23f0fdfa3db8" /></li>
+</ul>
+<h4 id="3211-demographics-reid-in-agegender-segmentations">3.2.11 Demographics (ReID) in Age/Gender Segmentations<a class="headerlink" href="#3211-demographics-reid-in-agegender-segmentations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Through the non-biometric ReID analysis of the store customers, it derives the age and gender distribution of the store's customer base, as well as information related to the store staff.</li>
+<li>Supports multi-store, daily, weekly, monthly, yearly, and customized date data view.</li>
+<li>Support switching between summary data and day-level data (weekly, monthly, yearly, customized date).</li>
+<li>Supports table and image switching and exporting through Filtering, Search and Download.</li>
+<li>Support to view multi-day data.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=c368e2105a8c650a1ac8d0fd62b883d6" /></li>
+</ul>
+<h4 id="3212-store-heatmap-reid">3.2.12 Store Heatmap (ReID)<a class="headerlink" href="#3212-store-heatmap-reid" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Through the wide application of our non-biometric ReID tehcnology, combined with the area covered by the extisting/AIoT camera irradiation can be derived the number of people in each area at different times. By way of heat distribution presents the length of time customers dwelled in different locations of the store.</li>
+<li>Support switching between different stores and dates to view the data.</li>
+<li>Support to present heat effect on store plan and 3D map
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=4e9aca30ae39359a9dd9fc3f964f6dea" /></li>
+</ul>
+<h4 id="3213-zone-analysis-reid">3.2.13 Zone Analysis (ReID)<a class="headerlink" href="#3213-zone-analysis-reid" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Through the wide application of our non-biometric ReID tehcnology, combined with the area covered by the extisting/AIoT camera irradiation can be derived the number of people in each area at different times.</li>
+<li>According to the division of the store partition, statistics on the number of customers in each area, the number of people dwelled, the dwell time, and other information;</li>
+<li>Support switching between different stores and dates to view the data.</li>
+<li>Support to present heat effect on store plan and 3D map.
+<img alt="" src="http://doc.vionyun.com:4999/server/index.php?s=/api/attachment/visitFile&amp;sign=fd62de7dc81701e1040e426c6a6a0d1f" /></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Vionvision
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
