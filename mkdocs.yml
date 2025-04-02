@@ -1,6 +1,27 @@
 site_name: My Docs
 site_url: https://lityuan0226.github.io/my-mkdocs/
+copyright: Copyright 2025 Vionvision
 theme:
   name: material
   palette:
-    scheme: slate
+    - media: "{prefers-color-scheme}"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "{prefers-color-scheme: light}"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "{prefers-coloe-scheme: dark}"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
