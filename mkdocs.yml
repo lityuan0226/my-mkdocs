@@ -1,8 +1,16 @@
-site_name: My Docs
+# Project information
+site_name: Vion
 site_url: https://lityuan0226.github.io/my-mkdocs/
-copyright: Copyright 2025 Vionvision
+
+# Copyright
+copyright: Copyright &copy; 2025 Vionvision
+
+  # Configuration
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.top
   palette:
     - media: "{prefers-color-scheme}"
       toggle:
@@ -25,3 +33,35 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+
+# Page tree
+nav:
+   - Home: index.md
+   - Guide:
+     - BI Platfrom: guide/bi-platform.md
+     - Customer Operation SOP: guide/sop.md
+     - On-Premises Server Hosting Guide: guide/hosting.md
+     - Business Metrics Documentation: guide/metrics.md
+     - Service Desk Operation Guide: guide/service.md
+     - Configuration Guideline: guide/configuration.md
+     - Senor Device Installation Guide: guide/device.md
+     - Cbox Device Installation Guide: guide/cbox.md
+     - RESTful API Documentation: guide/api.md
+     - Integration: guide/integration.md
+     - VionDeviceTool: guide/tool.md
+   - Spec DataSheet:
+     - G5: spec-datasheet/g5.md
+     - CBox: spec-datasheet/cbox.md
+     - BI v6: spec-datasheet/bi-v6.md
+   - QuickGuide:
+     - G5: quick-guide/g5.md
+     - CBox: quick-guide/cbox.md
+   - FAQ: faq.md
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - toc:
+      permalink: true
